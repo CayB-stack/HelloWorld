@@ -1,0 +1,24 @@
+import json
+import datetime
+from selenium import webdriver
+
+# Start the browser (no window will open)
+options = webdriver.ChromeOptions()
+options.add_argument('--headless')
+driver = webdriver.Chrome(options=options)
+
+# Get details
+scrape_time = datetime.datetime.utcnow().isoformat() + "Z"
+user_agent = driver.execute_script("return navigator.userAgent;")
+url = "https://www.scrapethissite.com/pages/simple/"
+
+# Create the data
+metadata = {
+    "scrape_time": scrape_time,
+    "user_agent": user_agent,
+    "url": url
+}
+
+
+# Close the browser
+driver.quit()
