@@ -1,5 +1,6 @@
 import pytest
-from selenium_country_scraper import scrape_countries # this is your scraping function
+
+from selenium_country_scraper import scrape_countries
 
 # Test 1: Check the scraper gives back a list with data
 def test_scraper_returns_list():
